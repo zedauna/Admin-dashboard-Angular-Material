@@ -1,0 +1,22 @@
+<mat-toolbar class="fixed top-0 left-0 right-0 h-16 z-50 bg-blue-500!">
+    <button matIconButton class="text-white!" (click)="sideBarButtonClick()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="text-white!">Admin Dashboard</span>
+
+    <span class="example-spacer"></span>
+
+    <!-- <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button> -->
+    <button matIconButton class="text-white!" [matMenuTriggerFor]="menu">
+        <mat-icon>people</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/setting">Setting</button>
+        <button mat-menu-item routerLink="/login">Logout</button>
+    </mat-menu>
+
+</mat-toolbar>

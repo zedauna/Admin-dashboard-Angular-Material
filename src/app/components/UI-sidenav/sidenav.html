@@ -1,0 +1,34 @@
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side" class="shadow-lg!"  [opened]="isSideOpen">
+      <!-- h-screen -->
+        <div class="fixed top-16 left-0 h-[calc(100vh-4rem)] w-64 bg-white p-4 overflow-y-auto hidden md:block">
+            <mat-nav-list role="list">
+
+                <mat-list-item>
+                    <a routerLink="/"   class="menu"><mat-icon class="color-blue-500!">house</mat-icon><span>Dashboard</span></a>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <a routerLink="/users"   class="menu"><mat-icon class="color-blue-500!">house</mat-icon><span>Nos Clients</span></a>
+                </mat-list-item>
+
+              <mat-list-item>
+                <a routerLink="/products"   class="menu"><mat-icon class="color-blue-500!">add_shopping_cart</mat-icon><span>Nos Produits</span></a>
+              </mat-list-item>
+
+                <mat-list-item>
+                    <a routerLink="/setting" class="menu"><mat-icon class="color-blue-500!">settings</mat-icon><span>Paramétrage</span></a>
+                </mat-list-item>
+
+            </mat-nav-list>
+        </div>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <!--h-screen! -->
+        <div class="mt-10 p-8 overflow-y-auto">
+            <!-- <button matButton="elevated" (click)="drawer.toggle()">Toggle drawer</button> -->
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

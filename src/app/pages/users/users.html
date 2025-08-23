@@ -1,0 +1,27 @@
+<div>
+      <!-- les cards -->
+        <app-info-card />
+
+        <!-- tableau  -->
+    <div class="mt-4">
+        <mat-card class="p-4 bg-white! mb-4">
+            <h1 class="text-xl font-semibold">Clients</h1>
+            <app-client-tablefilter />
+        </mat-card>
+    </div>
+
+        <!-- les plots -->
+    <div class="mt-4">
+        <div class="grid grid-cols-3 gap-8">
+            <mat-card class="p-4">
+                <h1 class="font-semibold">Répartition par Genre</h1>
+                <app-client-gender-pie />
+            </mat-card>
+            <mat-card class="col-span-2 p-4">
+                <h1 class="font-semibold">Carte de répartition des clients </h1>
+                <app-client-map />
+            </mat-card>
+        </div>
+    </div>
+
+</div>

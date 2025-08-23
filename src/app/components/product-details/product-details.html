@@ -1,0 +1,74 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 pt-3">
+  @if(product()){
+
+    <mat-card>
+
+      <mat-card-header class="p-4">
+        <mat-card-title>{{ product()?.title }}</mat-card-title>
+        <mat-card-subtitle>{{ product()?.brand || 'N/A' }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <img
+        class="p-4 h-auto max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
+        mat-card-image
+        [src]="product()?.thumbnail"
+        [alt]="product()?.title"
+      />
+
+    </mat-card>
+
+    <mat-card>
+
+      <mat-card-content class="p-4 m-2">
+        <p><strong>Description :</strong> {{ product()?.description }}</p>
+        <p><strong>Catégorie :</strong> {{ product()?.category }}</p>
+        <p><strong>Prix :</strong> {{ product()?.price | currency:'EUR' }}</p>
+        <p><strong>Note :</strong> {{ product()?.rating }} / 5</p>
+        <p><strong>Disponibilité :</strong> {{ product()?.availabilityStatus }}</p>
+      </mat-card-content>
+
+      <mat-card-content class="p-4 m-2">
+        <h4>Spécifications</h4>
+        <ul>
+          <li><strong>SKU :</strong> {{ product()?.sku }}</li>
+          <li><strong>Poids :</strong> {{ product()?.weight }} kg</li>
+          <li>
+            <strong>Dimensions :</strong>
+            {{ product()?.dimensions?.width }} x {{ product()?.dimensions?.height }} x
+            {{ product()?.dimensions?.depth }} cm
+          </li>
+          <li><strong>Garantie :</strong> {{ product()?.warrantyInformation }}</li>
+        </ul>
+      </mat-card-content>
+
+      <mat-card-content class="p-4 m-2">
+        <h4>Avis ({{ product()?.reviews?.length }})</h4>
+        @for(review of product()?.reviews; track review ){
+            <mat-card-content>
+              <p>
+                <strong>{{ review.reviewerName }}</strong> - Note :
+                {{ review.rating }} / 5
+              </p>
+              <p>{{ review.comment }}</p>
+              <small>Publié le : {{ review.date | date }}</small>
+            </mat-card-content>
+        }
+      </mat-card-content>
+    </mat-card>
+  }
+
+</div>
+
+<div class="flex justify-around p-4 m-2">
+  <button
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+    (click)="navigateProduits()"> Retour </button>
+
+  <button
+    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
+    (click)="navigateProduitEditer()"> Editer </button>
+
+  <button
+    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+    (click)="navigateProduitSupprimer()"> Supprimer </button>
+</div>

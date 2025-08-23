@@ -1,0 +1,14 @@
+<mat-card>
+  @if (users(); as u){
+    <mat-card-header>
+      <mat-card-title>{{ u.firstName }} {{ u.lastName }}</mat-card-title>
+      <mat-card-subtitle>{{ u.email }}</mat-card-subtitle>
+    </mat-card-header>
+      <img mat-card-image [src]="u.image" alt="User photo">
+    <mat-card-content>
+      <p><b>Age:</b> {{ u.age }}</p>
+      <p><b>Gender:</b> {{ u.gender }}</p>
+      <p><b>City:</b> {{ u.address.city }}</p>
+    </mat-card-content>
+  }
+</mat-card>

@@ -1,0 +1,71 @@
+<div>
+    <!-- les cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <mat-card class="p-4 bg-blue-200!">
+            <h1 class="mb-4 text-3xl font-semibold">Ventes</h1>
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col gap-2">
+                    <span class="font_semibold text-xl">10.000</span>
+                    <span class="color-green-600">+10%</span>
+                </div>
+                <div><mat-icon>attach_money</mat-icon></div>
+            </div>
+        </mat-card>
+
+        <mat-card class="p-4 bg-blue-200!">
+            <h1 class="mb-4 text-3xl font-semibold">Quantités</h1>
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col gap-2">
+                    <span class="font_semibold text-xl">50</span>
+                    <span class="color-green-600">-10%</span>
+                </div>
+                <div><mat-icon>add_shopping_cart</mat-icon></div>
+            </div>
+        </mat-card>
+
+        <mat-card class="p-4 bg-red-200!">
+            <h1 class="mb-4 text-3xl font-semibold">Commandes</h1>
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col gap-2">
+                    <span class="font_semibold text-xl">100</span>
+                    <span class="color-green-600">-20%</span>
+                </div>
+                <div><mat-icon>bar_chart</mat-icon></div>
+            </div>
+        </mat-card>
+
+        <mat-card class="p-4 bg-yellow-200!">
+            <h1 class="mb-4 text-3xl font-semibold">Catégories</h1>
+            <div class="flex justify-between items-center">
+                <div class="flex flex-col gap-2">
+                    <span class="font_semibold text-xl">10</span>
+                    <span class="color-green-600">+8%</span>
+                </div>
+                <div><mat-icon>branding_watermark</mat-icon></div>
+            </div>
+        </mat-card>
+    </div>
+
+    <!-- les plots -->
+    <div class="mt-4">
+        <div class="grid grid-cols-3 gap-8">
+            <mat-card class="col-span-2 p-4">
+                <h1 class="font-semibold">Aperçu des ventes</h1>
+                <app-home-base-chart />
+            </mat-card>
+            <mat-card class="p-4">
+                <h1 class="font-semibold">Aperçu des ventes par catégorie</h1>
+                <app-home-base-pie />
+            </mat-card>
+        </div>
+    </div>
+
+    <!-- tableau  -->
+    <div class="mt-4">
+        <mat-card class="p-4 bg-white! mb-4">
+            <h1 class="text-xl font-semibold">Commandes du jour</h1>
+            <app-home-table />
+        </mat-card>
+    </div>
+
+</div>

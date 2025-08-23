@@ -1,0 +1,67 @@
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject, OnDestroy, OnInit,
+} from '@angular/core';
+import {UsersServiceShared} from '@app/services/users/users-service-shared';
+import 'leaflet/dist/images/marker-shadow.png';
+import {forkJoin, Subscription} from 'rxjs';
+import {LeafletService} from '@app/services/leaflet/leaflet-service';
+import {toObservable} from '@angular/core/rxjs-interop';
+
+@Component({
+  selector: 'app-map-client',
+  standalone: true,
+  imports: [],
+  templateUrl: './map-client.html',
+  styleUrl: './map-client.scss',
+  //changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class MapClient implements OnInit,OnDestroy {
+  private subscription: Subscription| null = null;
+  private UsersServiceShared:UsersServiceShared=inject(UsersServiceShared);
+  private LeafletService: LeafletService=inject(LeafletService);
+
+  //data shared
+  usersJson=this.UsersServiceShared.usersJson
+  markers = computed(() => {
+    return this.usersJson().users.map((user) => ({
+      gender:user.gender,
+      lat: user.address.coordinates.lat,
+      lng: user.address.coordinates.lng,
+      popup: `<b>${user.address.city}</b>`,
+    }));
+  });
+
+  markers$ = toObservable(this.markers);
+
+  ngOnInit(): void {
+    this.LeafletService.initMap('map');
+    this.subscription = forkJoin({map:this.LeafletService.mapReady$,
+                                  markers:this.markers$})
+      .subscribe({
+          next: ({ markers }) => {
+            console.log("Map and markers data are ready. Adding markers...");
+            this.LeafletService.clearMarkers();
+            markers.forEach(marker => {
+              this.LeafletService.addMarkers(marker.gender,marker.lat, marker.lng, marker.popup);
+            });
+          },
+          error: (err) => {
+            console.error('An error occurred:', err);
+          }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
+  }
+
+  constructor() {
+    effect(() => {
+      //console.log(this.markers());
+    });
+  }
+}

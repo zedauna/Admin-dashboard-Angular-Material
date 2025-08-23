@@ -1,0 +1,54 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+
+    <mat-card-header>
+      <mat-card-title>Formulaire du produit</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Titre</mat-label>
+          <input matInput formControlName="title" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" required></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Prix</mat-label>
+        <input matInput type="number" formControlName="price" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Marque</mat-label>
+        <input matInput formControlName="brand" />
+      </mat-form-field>
+
+      <div formGroupName="dimensions">
+        <h3>Dimensions</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>Largeur (cm)</mat-label>
+          <input matInput type="number" formControlName="width" />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Statut de disponibilité</mat-label>
+        <mat-select formControlName="availabilityStatus" required>
+          @for(status of availabilityStatuses; track status){
+            <mat-option [value]="status">
+              {{ status }}
+            </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.valid">
+        Enregistrer
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>

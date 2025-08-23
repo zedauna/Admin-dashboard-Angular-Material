@@ -1,0 +1,30 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-3">
+    @for(p of products(); track p){
+
+         <mat-card class="p-4">
+           <mat-card-header>
+             <mat-card-title>{{p.title}}</mat-card-title>
+             <mat-card-subtitle>
+               <p class="text-sky-950">Category : {{p.category | uppercase}}  </p>
+               <p class="text-red-800">Price : {{p.price}}</p>
+               <p class="text-amber-700">Stock : {{p.stock}}</p>
+             </mat-card-subtitle>
+           </mat-card-header>
+
+           <img mat-card-image [src]="p.images[0]" alt="Glamour Beauty" class="h-[200px] w-full p-1 object-cover ">
+
+           <mat-card-content>
+             <p>{{p.description}}</p>
+           </mat-card-content>
+
+           <mat-card-footer class="flex justify-between ">
+             <mat-card-actions>
+               <button matButton (click)="detailsProducts(p.id)">Plus de détails</button>
+               <button matButton>SHARE</button>
+             </mat-card-actions>
+             <guachos-rating [value]="p.rating" class="pt-4"> </guachos-rating>
+           </mat-card-footer>
+
+         </mat-card>
+   }
+</div>

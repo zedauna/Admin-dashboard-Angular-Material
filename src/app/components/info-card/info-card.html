@@ -1,0 +1,46 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <mat-card class="p-4 bg-blue-200!">
+    <h1 class="mb-4 text-3xl font-semibold">Total</h1>
+    <div class="flex justify-between items-center">
+      <div class="flex flex-col gap-2">
+        <span class="font_semibold text-xl">{{total()}}</span>
+        <!-- <span class="color-green-600">+10%</span> -->
+      </div>
+      <div><mat-icon>attach_money</mat-icon></div>
+    </div>
+  </mat-card>
+
+  <mat-card class="p-4 bg-blue-200!">
+    <h1 class="mb-4 text-3xl font-semibold">Limite</h1>
+    <div class="flex justify-between items-center">
+      <div class="flex flex-col gap-2">
+        <span class="font_semibold text-xl">{{skip()}}</span>
+        <!-- <span class="color-green-600">-10%</span> -->
+      </div>
+      <div><mat-icon>add_shopping_cart</mat-icon></div>
+    </div>
+  </mat-card>
+
+  <mat-card class="p-4 bg-red-300!">
+    <h1 class="mb-4 text-3xl font-semibold">SKIP</h1>
+    <div class="flex justify-between items-center">
+      <div class="flex flex-col gap-2">
+        <span class="font_semibold text-xl">{{limit()}}</span>
+        <!-- <span class="color-green-600">-20%</span> -->
+      </div>
+      <div><mat-icon>bar_chart</mat-icon></div>
+    </div>
+  </mat-card>
+
+  <!-- <mat-card class="p-4 bg-yellow-200!">
+      <h1 class="mb-4 text-3xl font-semibold">Brands</h1>
+      <div class="flex justify-between items-center">
+          <div class="flex flex-col gap-2">
+              <span class="font_semibold text-xl">10</span>
+              <span class="color-green-600">+8%</span>
+          </div>
+          <div><mat-icon>branding_watermark</mat-icon></div>
+      </div>
+  </mat-card> -->
+
+</div>

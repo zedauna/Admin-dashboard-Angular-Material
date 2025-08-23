@@ -1,0 +1,57 @@
+<div class="pt-2 pb-5">
+  <div class="grid grid-cols-3 gap-8">
+    <mat-card>
+      <mat-form-field>
+        <mat-label>Produit</mat-label>
+        <input
+          matInput
+          placeholder="Essence"
+          [(ngModel)]="searchProduct"
+          [matAutocomplete]="autoproduit"
+        >
+          <mat-autocomplete autoActiveFirstOption #autoproduit="matAutocomplete">
+            @for (option of filteredProducts(); track option) {
+              <mat-option [value]="option">{{option}}</mat-option>
+            }
+          </mat-autocomplete>
+      </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+      <mat-form-field>
+        <mat-label>Categorie</mat-label>
+        <input
+          matInput
+          placeholder="beauty"
+          [(ngModel)]="searchCategory"
+          [matAutocomplete]="autocategory"
+        >
+            <mat-autocomplete autoActiveFirstOption #autocategory="matAutocomplete">
+              @for (option of filteredCategory(); track option) {
+                <mat-option [value]="option">{{option}}</mat-option>
+              }
+            </mat-autocomplete>
+      </mat-form-field>
+    </mat-card>
+
+    <mat-card >
+      <mat-form-field>
+        <mat-label>Rating</mat-label>
+        <input
+          matInput
+          placeholder="Rating"
+          [(ngModel)]="searchRating"
+          [matAutocomplete]="autorating"
+          aria-label="Number"
+        >
+            <mat-autocomplete
+              autoActiveFirstOption
+              #autorating="matAutocomplete">
+            @for (option of filteredRating(); track option) {
+              <mat-option [value]="option">{{option}}</mat-option>
+            }
+          </mat-autocomplete>
+      </mat-form-field>
+    </mat-card>
+  </div>
+</div>

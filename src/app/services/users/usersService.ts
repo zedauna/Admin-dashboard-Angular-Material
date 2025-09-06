@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { apiUrlUsers } from '@app/utils/linksApi';
 import { catchError, map, Observable, of} from 'rxjs';
-import { emptyUsersJson, UsersJSON } from '@app/models/users.model';
+import {apiUrlUsers} from '../../utils/linksApi';
+import {emptyUsersJson, UsersJSON} from '../../models/users.model';
+
 
 
 @Injectable({

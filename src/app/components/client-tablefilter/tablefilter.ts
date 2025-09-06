@@ -12,8 +12,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import {UsersServiceShared} from '@app/services/users/users-service-shared';
-import {  User } from '@app/models/users.model';
+import {User} from '../../models/users.model';
+import {UsersServiceShared} from '../../services/users/users-service-shared';
+
 
 @Component({
   selector: 'app-client-tablefilter',

@@ -9,9 +9,10 @@ import {
 } from '@angular/core';
 import { ChartData, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import {UsersServiceShared} from '@app/services/users/users-service-shared';
-import {User} from '@app/models/users.model';
-import { genderCount } from '@app/utils/functions';
+import {UsersServiceShared} from '../../services/users/users-service-shared';
+import {User} from '../../models/users.model';
+import {genderCount} from '../../utils/functions';
+
 
 @Component({
   selector: 'app-client-gender-pie',

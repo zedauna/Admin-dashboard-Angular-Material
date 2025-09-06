@@ -3,11 +3,12 @@ import { Home } from './pages/home/home.js';
 import { Setting } from './pages/setting/setting.js';
 import { Login } from './pages/login/login.js';
 import { Users } from './pages/users/users.js';
-import { Products } from '@app/pages/products/products';
-import {ProductDetails} from '@app/components/product-details/product-details';
-import {ProductForm} from '@app/components/product-form/product-form';
-import {NotFound} from '@app/pages/not-found/not-found';
-import {isLoggedInGuard} from '@app/guards/is-logged-in-guard';
+import {isLoggedInGuard} from './guards/is-logged-in-guard';
+import {Products} from './pages/products/products';
+import {ProductDetails} from './components/product-details/product-details';
+import {ProductForm} from './components/product-form/product-form';
+import {NotFound} from './pages/not-found/not-found';
+
 
 export const routes: Routes = [
   {

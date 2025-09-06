@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, computed, effect, inject, model} from '@angular/core';
-import {UsersServiceShared} from '@app/services/users/users-service-shared';
+import {UsersServiceShared} from '../../services/users/users-service-shared';
 import { MatCardModule } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 

@@ -1,8 +1,8 @@
 import {Component, computed, inject} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
-import {UsersServiceShared} from '@app/services/users/users-service-shared';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {UsersServiceShared} from '../../services/users/users-service-shared';
 
 @Component({
   selector: 'app-client-form',

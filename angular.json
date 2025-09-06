@@ -28,7 +28,6 @@
               }
             ],
             "styles": [
-              "node_modules/leaflet/dist/leaflet.css",
               "src/styles.scss"
             ]
           },
@@ -84,11 +83,6 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-                {
-                "glob": "**/*",
-                "input": "./node_modules/leaflet/dist/images/",
-                "output": "public/leaflet/"
               }
             ],
             "styles": [

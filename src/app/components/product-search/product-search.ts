@@ -3,7 +3,7 @@ import {MatFormField, MatInput, MatLabel} from "@angular/material/input";
 import {MatCard} from '@angular/material/card';
 import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from '@angular/material/autocomplete';
 import {FormsModule} from '@angular/forms';
-import {ProductsServiceShared} from '@app/services/products/products-service-shared';
+import {ProductsServiceShared} from '../../services/products/products-service-shared';
 
 @Component({
   selector: 'app-product-search',
@@ -32,7 +32,6 @@ export class ProductSearch {
   searchProduct=model('');
   searchCategory=model('');
   searchRating=model('');
-
 
   filteredProducts=computed(()=> {
     const listp=this.products().map(product=> product.title);

@@ -1,8 +1,8 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {apiUrlProducts} from '@app/utils/linksApi';
 import {catchError, map, Observable, of} from 'rxjs';
-import {emptyProductsJson, ProductsJson} from '@app/models/products.model';
+import {apiUrlProducts} from '../../utils/linksApi';
+import {emptyProductsJson, ProductsJson} from '../../models/products.model';
 
 @Injectable({
   providedIn: 'root'

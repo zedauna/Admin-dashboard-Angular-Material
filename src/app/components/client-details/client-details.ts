@@ -1,5 +1,5 @@
 import {Component, computed, inject} from '@angular/core';
-import {UsersServiceShared} from '@app/services/users/users-service-shared';
+import {UsersServiceShared} from '../../services/users/users-service-shared';
 import {MatCardModule} from '@angular/material/card';
 
 @Component({

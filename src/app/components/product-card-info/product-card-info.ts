@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, computed, effect, inject} from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import {ProductsServiceShared} from '@app/services/products/products-service-shared';
+import {ProductsServiceShared} from '../../services/products/products-service-shared';
 import {UpperCasePipe} from '@angular/common';
 import { GuachosRatingModule } from 'guachos-rating';
 import {FormsModule} from '@angular/forms';

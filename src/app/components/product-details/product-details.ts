@@ -9,7 +9,7 @@ import {
   MatCardTitle
 } from '@angular/material/card';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ProductsServiceShared} from '@app/services/products/products-service-shared';
+import {ProductsServiceShared} from '../../services/products/products-service-shared';
 import {toSignal} from '@angular/core/rxjs-interop';
 
 @Component({

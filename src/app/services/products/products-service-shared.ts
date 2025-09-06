@@ -1,7 +1,7 @@
 import {inject, Injectable, signal} from '@angular/core';
-import {ProductsService} from '@app/services/products/products-service';
+import {ProductsService} from './products-service';
 import {BehaviorSubject} from 'rxjs';
-import {emptyProductsJson, Product, ProductsJson} from '@app/models/products.model';
+import {emptyProductsJson, Product, ProductsJson} from '../../models/products.model';
 
 @Injectable({
   providedIn: 'root'

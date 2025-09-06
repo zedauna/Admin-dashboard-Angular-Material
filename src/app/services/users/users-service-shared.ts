@@ -1,7 +1,7 @@
 import {inject, Injectable, signal} from '@angular/core';
-import {UsersService} from '@app/services/users/usersService';
-import {emptyUsersJson, UsersJSON} from '@app/models/users.model';
 import {BehaviorSubject} from 'rxjs';
+import {emptyUsersJson, UsersJSON} from '../../models/users.model';
+import { UsersService } from "./usersService";
 
 @Injectable({
   providedIn: 'root'

@@ -1,9 +1,9 @@
 import {Component, computed, effect, inject, model} from '@angular/core';
-import {ProductsServiceShared} from '@app/services/products/products-service-shared';
-import {ProductCardInfo} from '@app/components/product-card-info/product-card-info';
-import {ProductSearch} from '@app/components/product-search/product-search';
 import {toObservable, toSignal} from '@angular/core/rxjs-interop';
 import {combineLatest, debounceTime} from 'rxjs';
+import {ProductSearch} from '../../components/product-search/product-search';
+import {ProductCardInfo} from '../../components/product-card-info/product-card-info';
+import {ProductsServiceShared} from '../../services/products/products-service-shared';
 
 @Component({
   selector: 'app-products',

@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { Header } from '@app/components/UI-header/header.js';
-import { Sidenav } from '@app/components/UI-sidenav/sidenav.js';
+import {Header} from './components/UI-header/header';
+import {Sidenav} from './components/UI-sidenav/sidenav';
 
 @Component({
   selector: 'app-root',

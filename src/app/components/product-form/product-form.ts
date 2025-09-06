@@ -2,9 +2,9 @@ import {Component, input, OnInit, output} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
 import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
-import {Product} from '@app/models/products.model';
 import {MatOption, MatSelect} from '@angular/material/select';
 import {MatButton} from '@angular/material/button';
+import {Product} from '../../models/products.model';
 
 @Component({
   selector: 'app-product-form',

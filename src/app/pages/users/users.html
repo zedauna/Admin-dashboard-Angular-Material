@@ -1,6 +1,10 @@
 <div>
       <!-- les cards -->
-        <app-info-card />
+        <app-info-card
+        [total]="total()"
+        [limit]="limit()"
+        [skip]="skip()"
+        />
 
         <!-- tableau  -->
     <div class="mt-4">

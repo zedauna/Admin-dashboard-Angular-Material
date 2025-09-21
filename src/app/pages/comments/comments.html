@@ -1,0 +1,22 @@
+<div>
+  <!-- les cards -->
+  <app-info-card
+    [total]="total()"
+    [limit]="limit()"
+    [skip]="skip()"
+  />
+
+  <!-- tableau des commnetaires  -->
+  <div class="mt-4">
+    <mat-card class="p-4 bg-white! mb-4">
+      <h1 class="text-xl font-semibold p-2">Commentaires</h1>
+      <app-comments-list
+        [comments]="comments()"
+        [commentsIsLoading]="commentsIsLoading()"
+        (commentSelected)="onCommentSelected($event)"
+        [likes]="likes()"
+      />
+    </mat-card>
+  </div>
+
+</div>

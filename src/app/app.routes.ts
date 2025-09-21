@@ -8,6 +8,7 @@ import {Products} from './pages/products/products';
 import {ProductDetails} from './components/product-details/product-details';
 import {ProductForm} from './components/product-form/product-form';
 import {NotFound} from './pages/not-found/not-found';
+import {Comments} from './pages/comments/comments';
 
 
 export const routes: Routes = [
@@ -48,6 +49,11 @@ export const routes: Routes = [
   {
     path: "setting",
     component: Setting,
+    canActivate:[isLoggedInGuard]
+  },
+  {
+    path: "comments",
+    component: Comments,
     canActivate:[isLoggedInGuard]
   },
   {
